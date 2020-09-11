@@ -10,7 +10,7 @@ const base_url = 'https://image.tmdb.org/t/p/original/';
 function Row({ title, fetchUrl, isLargeRow }) {
 
   const [movies, setMovies] = useState([]);
-  const [trailerUrl, setTrailerUrl] = useState('');
+  const [trailerUrl, setTrailerUrl] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -31,12 +31,11 @@ function Row({ title, fetchUrl, isLargeRow }) {
     if (trailerUrl) {
       setTrailerUrl('');
     } else {
-      movieTrailer(movie?.name || '')
+      movieTrailer(movie?.name || "")
       .then((url) => {
         const urlParams = new URLSearchParams(new URL(url).search);
-        urlParams.get('v');
-      })
-      .catch((error) => console.log(error));
+        setTrailerUrl(urlParams.get('v'));
+      }).catch((error) => console.log(error))
     }
   };
 
