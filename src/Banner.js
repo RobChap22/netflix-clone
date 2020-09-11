@@ -34,20 +34,20 @@ function Banner() {
         backgroundPosition: "center center",
       }}
     >
-      <div className='banner_contents'>
+      <div className='banner__contents'>
 
-        <h1 className='banner_title'>
+        <h1 className='banner__title'>
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
 
-        <div className='banner_buttons'>
-          <button className='banner_button'>Play</button>
-          <button className='banner_button'>My List</button>
+        <div className='banner__buttons'>
+          <button className='banner__button'>Play</button>
+          <button className='banner__button'>My List</button>
         </div>
 
-        <h1 className='banner_description'>{truncate(movie?.overview, 150)}</h1>
+        <h1 className='banner__description'>{truncate(movie?.overview, 150)}</h1>
 
-        <div className='banner--fadeBottom'></div>
+        <div className='banner__fadeBottom'></div>
       </div>
     </header>
   )
